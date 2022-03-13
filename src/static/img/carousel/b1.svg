@@ -1,0 +1,49 @@
+<svg id="banner_appstore" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="324" height="180" viewBox="0 0 324 180">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: url(#radial-gradient);
+      }
+
+      .cls-2 {
+        clip-path: url(#clip-path);
+      }
+
+      .cls-3 {
+        fill: #594bff;
+      }
+
+      .cls-3, .cls-4, .cls-5, .cls-6 {
+        opacity: 0.203;
+      }
+
+      .cls-4 {
+        fill: #754aff;
+      }
+
+      .cls-5 {
+        fill: #6d4aff;
+      }
+
+      .cls-6 {
+        fill: #472bc2;
+      }
+    </style>
+    <radialGradient id="radial-gradient" cx="0.5" cy="0.107" r="0.893" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#9a96f9"/>
+      <stop offset="1" stop-color="#7f79fb"/>
+    </radialGradient>
+    <clipPath id="clip-path">
+      <rect id="Mask" class="cls-1" width="324" height="180"/>
+    </clipPath>
+  </defs>
+  <g id="Group">
+    <rect id="Mask-2" data-name="Mask" class="cls-1" width="324" height="180"/>
+    <g id="Group-2" data-name="Group" class="cls-2">
+      <path id="Rectangle" class="cls-3" d="M97.986,0H168V132.658l-147.526,10.8c-20.761,1.52-32.7-23.122-18.641-38.473Z" transform="translate(246 -71)"/>
+      <path id="Rectangle-2" data-name="Rectangle" class="cls-4" d="M-.444,40.68a23,23,0,0,0-20.111-27.4L-143.9.131a23,23,0,0,0-23.88,31.19l28.641,73.821H-13.4Z" transform="translate(476.309 138.801)"/>
+      <path id="Oval" class="cls-5" d="M60.683,174.926c39.862,0,0-48.629,90.335-58.539S290.411,0,250.549,0,0,42.771,0,82.738,20.821,174.926,60.683,174.926Z" transform="translate(0 -87)"/>
+      <path id="Triangle" class="cls-6" d="M181.4,5.316c29.179-19.894,66.557,9.8,53.78,42.721l-27.465,70.77,36.267,38.06c21.538,22.6,6.015,60.031-25.2,60.756L40.268,221.77c-29.009.674-46.829-31.518-30.857-55.743L61.451,87.1Z" transform="translate(-64 81)"/>
+    </g>
+  </g>
+</svg>

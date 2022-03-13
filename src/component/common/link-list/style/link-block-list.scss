@@ -1,0 +1,38 @@
+.c-link-block-list {
+    &_body {
+        padding: 30rpx 30rpx 0;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .l-link-block {
+        width: 100rpx;
+        margin-right: 77rpx;
+        margin-bottom: 30rpx;
+
+        &:nth-child(4n) {
+            margin-right: 0;
+        }
+
+        //小程序会报错！！很气。
+        // &:nth-child(4n + 1):nth-last-child(-n + 4),
+        // &:nth-child(4n + 1):nth-last-child(-n + 4) ~ .l-link-icon {
+        //     margin-bottom: 0;
+        // }
+    }
+
+    .c-link-block {
+        text-align: center;
+
+        &_icon {
+            width: 64rpx;
+            height: 64rpx;
+        }
+
+        &_title {
+            color: #333333;
+            font-size: 24rpx;
+            line-height: 30rpx;
+        }
+    }
+}

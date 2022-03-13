@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import App from './App'
+import './route/interceptor.js';
 
 Vue.config.productionTip = false
 

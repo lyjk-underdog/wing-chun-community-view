@@ -1,0 +1,15 @@
+.c-video-list {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 30rpx;
+
+    .l-video-item {
+        margin-right: 20rpx;
+        margin-top: 20rpx;
+
+        &:nth-child(2n) {
+            margin-right: 0;
+        }
+    }
+
+}

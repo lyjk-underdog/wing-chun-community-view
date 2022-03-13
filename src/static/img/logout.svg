@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40">
+  <defs>
+    <style>
+      .cls-1, .cls-2 {
+        fill: #2a77ff;
+      }
+
+      .cls-1 {
+        stroke: #2a77ff;
+        opacity: 0;
+      }
+
+      .cls-3 {
+        stroke: none;
+      }
+
+      .cls-4 {
+        fill: none;
+      }
+    </style>
+  </defs>
+  <g id="ic_my_idcard" transform="translate(3961 -3428)">
+    <g id="矩形_283" data-name="矩形 283" class="cls-1" transform="translate(-3961 3428)">
+      <rect class="cls-3" width="40" height="40"/>
+      <rect class="cls-4" x="0.5" y="0.5" width="39" height="39"/>
+    </g>
+    <g id="组_3307" data-name="组 3307" transform="translate(-3957 3395.764)">
+      <path id="路径_28345" data-name="路径 28345" class="cls-2" d="M17.6,67.236H2.909A2.934,2.934,0,0,1,0,64.295V40.177a2.934,2.934,0,0,1,2.909-2.941H17.6a1.471,1.471,0,0,1,0,2.941H2.909V64.442H17.6a1.382,1.382,0,0,1,1.455,1.471A1.349,1.349,0,0,1,17.6,67.236Zm5.236-7.206a1.432,1.432,0,0,1,0-2.059l5.527-5.588-5.928-6.259s-.348-1.179.4-1.766a1.392,1.392,0,0,1,2.036.084l6.691,6.765a1.432,1.432,0,0,1,0,2.059L24.873,60.03a1.393,1.393,0,0,1-2.036,0Z"/>
+      <path id="路径_28346" data-name="路径 28346" class="cls-2" d="M376.919,468.441H359.893a1.493,1.493,0,0,1,0-2.987h17.026v2.987Z" transform="translate(-347.756 -414.711)"/>
+    </g>
+  </g>
+</svg>

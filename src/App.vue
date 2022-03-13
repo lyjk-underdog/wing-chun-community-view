@@ -14,4 +14,12 @@
 
 <style>
 	/*每个页面公共css */
+	.swiper {
+		height: 100%;
+	}
+
+	.swiper-item {
+		overflow: auto;
+	}
+	
 </style>

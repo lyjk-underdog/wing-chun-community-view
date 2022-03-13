@@ -1,0 +1,32 @@
+.c-text-voice-submit {
+    padding: 16rpx 0 30rpx 16rpx;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #fff;
+
+    &_voice-icon {
+        width: 54rpx;
+        height: 54rpx;
+    }
+
+    &_input {
+        outline: none;
+        background: #F6F6F8;
+        width: 444rpx;
+        font-size: 20rpx;
+        color: #999999;
+        padding: 10rpx 19rpx;
+        border-radius: 9rpx;
+    }
+
+    &_send-btn {
+        width: 100rpx;
+        line-height: 60rpx;
+        background: #2A77FF;
+        color: #fff;
+        font-size: 20rpx;
+        text-align: center;
+        border-radius: 10rpx;
+    }
+}

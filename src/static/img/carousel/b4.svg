@@ -1,0 +1,72 @@
+<svg id="banner_source" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="335" height="182" viewBox="0 0 335 182">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+      }
+
+      .cls-2 {
+        fill: url(#linear-gradient);
+      }
+
+      .cls-3 {
+        clip-path: url(#clip-path);
+      }
+
+      .cls-4 {
+        opacity: 0.095;
+      }
+
+      .cls-5 {
+        fill: url(#linear-gradient-2);
+      }
+
+      .cls-6 {
+        opacity: 0.243;
+        fill: url(#linear-gradient-3);
+      }
+
+      .cls-7 {
+        opacity: 0.097;
+        fill: url(#linear-gradient-4);
+      }
+
+      .cls-8 {
+        fill: url(#linear-gradient-5);
+      }
+    </style>
+    <linearGradient id="linear-gradient" x1="0.5" y1="-0.373" x2="0.5" y2="1.446" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#a8e063"/>
+      <stop offset="1" stop-color="#56ab2f"/>
+    </linearGradient>
+    <clipPath id="clip-path">
+      <path id="联合_22" data-name="联合 22" class="cls-1" d="M0,182V0H335V182Z"/>
+    </clipPath>
+    <linearGradient id="linear-gradient-2" x1="0.919" y1="1.498" x2="0" y2="-0.224" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#7de03d"/>
+      <stop offset="1" stop-color="#a4ff79"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-3" x1="0.919" y1="1.498" x2="0" y2="-0.232" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#a9e063"/>
+      <stop offset="1" stop-color="#57ac2f"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-4" x1="-0.555" y1="0.066" x2="0.914" y2="1.348" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="1" stop-color="#b7ff87"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-5" x1="-0.117" y1="0.862" x2="0.859" y2="-0.515" xlink:href="#linear-gradient-3"/>
+  </defs>
+  <g id="Mask">
+    <rect id="Mask-2" data-name="Mask" class="cls-2" width="335" height="182"/>
+    <rect id="Mask-3" data-name="Mask" class="cls-1" width="335" height="182"/>
+  </g>
+  <g id="banner_source-2" data-name="banner_source" class="cls-3">
+    <g id="Rectangle" class="cls-4" transform="translate(-118.344 -61.167)">
+      <path id="Rectangle-2" data-name="Rectangle" class="cls-1" d="M0,0,133.539,25.733l59.257,332.7L59.257,332.7Z" transform="translate(232.208 0) rotate(39)"/>
+      <path id="Rectangle-3" data-name="Rectangle" class="cls-5" d="M0,0,133.539,25.733l59.257,332.7L59.257,332.7Z" transform="translate(232.208 0) rotate(39)"/>
+    </g>
+    <path id="Rectangle_Copy_3" data-name="Rectangle Copy 3" class="cls-6" d="M0,0,99.235,19.123,197.21,569.2,97.975,550.079Z" transform="translate(280.943 -244.756) rotate(39)"/>
+    <path id="Rectangle_Copy_2" data-name="Rectangle Copy 2" class="cls-7" d="M0,0S123.372,89.4,250.236,131.814s346.353,63.944,346.353,63.944v11.39H0Z" transform="translate(413.58 155.581) rotate(180)"/>
+    <path id="Rectangle_Copy" data-name="Rectangle Copy" class="cls-8" d="M0,0S130.344,61.745,213.778,80.271,596.589,112.89,596.589,112.89v9.326H0Z" transform="translate(-6.204 77.35)"/>
+  </g>
+</svg>

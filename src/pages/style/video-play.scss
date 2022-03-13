@@ -1,0 +1,18 @@
+.p-video-play {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+
+    &_header , &_footer {
+        flex: 0 0 auto;
+    }
+
+    &_body {
+        flex: 1 1 auto;
+    }
+
+    &_footer {
+        background: #fff;
+        padding-bottom: 68rpx;
+    }
+}

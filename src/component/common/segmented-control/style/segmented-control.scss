@@ -1,0 +1,15 @@
+.c-segmented-control {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+
+    &_header {
+        flex: 0 0 auto;
+        padding: 30rpx;
+        background: #fff;
+    }
+
+    &_body {
+        flex: 1 1 auto;
+    }
+}

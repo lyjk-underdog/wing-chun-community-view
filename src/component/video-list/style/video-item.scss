@@ -1,0 +1,19 @@
+.c-video-item {
+    width: 335rpx;
+    border-radius: 8rpx;
+    overflow: hidden;
+    background: #fff;
+
+    &_bac-img {
+        width: 100%;
+        height: 160rpx;
+    }
+
+    &_title {
+        background-color: #ccc;
+        padding: 15rpx 30rpx;
+        color: #333;
+        font-size: 28rpx;
+        font-weight: bold;
+    }
+}

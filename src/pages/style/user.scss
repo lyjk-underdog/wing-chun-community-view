@@ -1,0 +1,18 @@
+.p-user {
+    min-height: 100vh;
+    background: #F6F6F8;
+    padding: 30rpx 30rpx 0;
+
+    &_header {
+        margin-bottom: 30rpx;
+    }
+
+    .l-link-strip-list {
+        margin-bottom: 20rpx;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+}

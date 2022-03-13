@@ -1,0 +1,44 @@
+.c-user-info {
+    &_header {
+        display: flex;
+        align-items: center;
+        padding: 15rpx 24rpx;
+        margin-bottom: 20rpx;
+    }
+
+    &_avatar {
+        width: 102rpx;
+        height: 102rpx;
+        margin-right: 24rpx;
+    }
+
+    &_name {
+        color: #333;
+        font-size: 40rpx;
+        font-weight: bold;
+    }
+
+    &_footer {
+        display: flex;
+    }
+
+    .l-user-info-item {
+        flex:1 1 auto;
+    }
+
+    .c-user-info-item {
+        text-align: center;
+
+        &_header {
+            color: #333;
+            font-size: 30rpx;
+            margin-bottom: 16rpx;
+            font-weight: bold;
+        }
+
+        &_footer {
+            color: #999;
+            font-size: 24rpx;
+        }
+    }
+}

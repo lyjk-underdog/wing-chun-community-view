@@ -1,0 +1,41 @@
+<svg id="banner_eshare" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="335" height="182" viewBox="0 0 335 182">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: url(#radial-gradient);
+      }
+
+      .cls-2 {
+        clip-path: url(#clip-path);
+      }
+
+      .cls-3, .cls-4 {
+        fill: #f12712;
+      }
+
+      .cls-3 {
+        opacity: 0.1;
+      }
+
+      .cls-4 {
+        opacity: 0.15;
+      }
+    </style>
+    <radialGradient id="radial-gradient" cx="0.51" cy="0.5" r="2.833" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#f5af19"/>
+      <stop offset="1" stop-color="#f12711"/>
+    </radialGradient>
+    <clipPath id="clip-path">
+      <rect id="Mask" class="cls-1" width="335" height="182"/>
+    </clipPath>
+  </defs>
+  <g id="Group">
+    <rect id="Mask-2" data-name="Mask" class="cls-1" width="335" height="182"/>
+    <g id="Group-2" data-name="Group" class="cls-2">
+      <path id="Rectangle" class="cls-3" d="M137.618,0h98.246V201.2L21.492,218.16C-1.568,219.985-12.689,177.383,5.3,156.148Z" transform="translate(356.909 -113.75)"/>
+      <path id="Rectangle-2" data-name="Rectangle" class="cls-3" d="M6.567,65.16c3.91-21.1-6.221-42.21-21.08-43.928L-203.021-.558c-18.656-2.156-31.621,26.678-22.926,50.985l39.133,109.386H-10.978Z" transform="translate(509.21 33.019)"/>
+      <path id="Oval" class="cls-4" d="M91.865,269.114c50.776,6.67-8.124-84.216,105.289-86.264S355.267,4.613,304.491-2.057-7.512,30.094-.835,99.309,41.089,262.444,91.865,269.114Z" transform="matrix(0.951, 0.309, -0.309, 0.951, 0.83, -181.396)"/>
+      <path id="Triangle" class="cls-3" d="M160.315,1.79c19.628-15.107,60.5,10.561,56.889,35.73l-16.809,117.21,76.113,87.28c17.5,20.069,7.974,42.055-16.758,38.671L34.738,249.9c-23.417-3.2-43.391-27.043-36.706-43.809L43.7,91.54Z" transform="translate(151.627 58.507) rotate(56)"/>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,9 @@
+.p-message {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+
+    &_body {
+        flex: 1 1 auto;
+    }
+}

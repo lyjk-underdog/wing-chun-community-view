@@ -1,0 +1,61 @@
+.c-comment-item {
+    padding: 0 30rpx;
+    background: #fff;
+
+    &_header {
+        padding: 40rpx;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &_user,
+    &_like {
+        display: flex;
+        align-items: center;
+    }
+
+    &_user {
+        span {
+            font-size: 28rpx;
+            color: #333333;
+        }
+
+        img {
+            width: 68rpx;
+            height: 68rpx;
+            margin-right: 22rpx;
+        }
+    }
+
+    &_like {
+        span {
+            font-size: 24rpx;
+            color: #999999;
+            margin-right: 9rpx;
+        }
+
+        img {
+            width: 31rpx;
+            height: 31rpx;
+        }
+    }
+
+    &_content {
+        padding-left: 90rpx;
+        font-size: 34rpx;
+        color: #333333;
+    }
+
+    &_footer {
+        display: flex;
+        align-items: center;
+        padding: 24rpx 90rpx 0 ;
+    }
+
+    &_release-time {
+        font-size: 24rpx;
+        color: #999999;
+    }
+
+}
