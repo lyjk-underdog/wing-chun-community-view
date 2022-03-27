@@ -50,6 +50,12 @@
 			"style":{
 				"navigationBarTitleText":"视频播放"
 			}
+		},
+		{
+			"path":"pages/login",
+			"style":{
+				"navigationBarTitleText":"登录授权"
+			}
 		}
 	],
 	"globalStyle": {

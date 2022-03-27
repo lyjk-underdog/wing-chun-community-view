@@ -1,26 +1,31 @@
 <template>
-  <view class="c-message-item" @click="linkToCommentPage">
-    <img class="c-message-item_avatar" :src="message.user.avatar" />
-    <view class="c-message-item_body">
-      <view class="c-message-item_username">{{ message.user.name }}</view>
-      <view class="c-message-item_content">{{ message.content }}</view>
-      <view class="c-message-item_release-time"
-        >在{{ message.releaseTime }}评论了你</view
-      >
+  <LinkView :url="`comment?dynamicID=${this.message.dynamicID}`">
+    <view class="c-message-item">
+      <img class="c-message-item_avatar" :src="message.user.avatar" />
+      <view class="c-message-item_body">
+        <view class="c-message-item_username">{{ message.user.name }}</view>
+        <view class="c-message-item_content">{{ message.content }}</view>
+        <view class="c-message-item_release-time"
+          >在{{ releaseTime }}评论了你</view
+        >
+      </view>
     </view>
-  </view>
+  </LinkView>
 </template>
 
 <script>
 import Vue from "vue";
+import { formatDate } from "@/utils/index.js";
+import LinkView from "@/component/common/link-list/link-view.vue";
 
 export default Vue.extend({
+  components: {
+    LinkView,
+  },
   props: ["message"],
-  methods: {
-    linkToCommentPage() {
-      uni.navigateTo({
-        url: `comment?id=${this.message.dynamicId}`,
-      });
+  computed: {
+    releaseTime() {
+      return formatDate(Number.parseInt(this.message.releaseTime));
     },
   },
 });

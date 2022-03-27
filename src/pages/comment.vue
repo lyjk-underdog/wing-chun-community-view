@@ -6,10 +6,10 @@
     <view class="p-comment_body">
       <SegmentedcControl :panesVal="panesVal">
         <template v-slot:0>
-          <CommentDynamicNewList />
+          <CommentList target="dynamic" type="new" />
         </template>
         <template v-slot:1>
-          <CommentDynamicHotList />
+          <CommentList target="dynamic" type="hot" />
         </template>
       </SegmentedcControl>
     </view>
@@ -23,16 +23,14 @@
 import Vue from "vue";
 import DynamicOnly from "@/component/dynamic-list/dynamic-only.vue";
 import SegmentedcControl from "@/component/common/segmented-control/segmented-control.vue";
-import CommentDynamicNewList from "@/component/comment-list/comment-dynamic-new-list.vue";
-import CommentDynamicHotList from "@/component/comment-list/comment-dynamic-hot-list.vue";
+import CommentList from "@/component/comment-list/comment-list.vue";
 import ReplyDynamic from "@/component/replyer/replyer-dynamic.vue";
 
 export default Vue.extend({
   components: {
     DynamicOnly,
     SegmentedcControl,
-    CommentDynamicNewList,
-    CommentDynamicHotList,
+    CommentList,
     ReplyDynamic,
   },
   data() {

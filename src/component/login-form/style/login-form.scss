@@ -1,0 +1,19 @@
+.c-login-from {
+    &_input {
+        width: 100%;
+        border-bottom: 1px solid #EDEDED;
+        padding: 28rpx 0;
+        font-size: 34rpx;
+    }
+
+    &_btn {
+        margin-top: 200rpx;
+        width: 608rpx;
+        line-height: 80rpx;
+        background: #2A77FF;
+        color: #FFFFFF;
+        font-size: 32rpx;
+        text-align: center;
+        border-radius: 52px;
+    }
+}

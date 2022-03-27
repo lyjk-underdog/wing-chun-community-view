@@ -1,3 +1,6 @@
+
+
 module.exports = {
-    transpileDependencies: ['@dcloudio/uni-ui']
+    transpileDependencies: ['@dcloudio/uni-ui','uni-simple-router'],
+
 }

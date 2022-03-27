@@ -6,10 +6,10 @@
     <view class="p-video-play_body">
       <SegmentedcControl :panesVal="panesVal">
         <template v-slot:0>
-          <CommentVideoNewList />
+          <CommentList target="video" type="new" />
         </template>
         <template v-slot:1>
-          <CommentVideoHotList />
+          <CommentList target="video" type="hot" />
         </template>
       </SegmentedcControl>
     </view>
@@ -23,16 +23,14 @@
 import Vue from "vue";
 import VideoPlayer from "@/component/video-player/video-player.vue";
 import SegmentedcControl from "@/component/common/segmented-control/segmented-control.vue";
-import CommentVideoNewList from "@/component/comment-list/comment-video-new-list.vue";
-import CommentVideoHotList from "@/component/comment-list/comment-video-hot-list.vue";
+import CommentList from "@/component/comment-list/comment-list.vue";
 import ReplyerVideo from "@/component/replyer/replyer-video.vue";
 
 export default Vue.extend({
   components: {
     VideoPlayer,
     SegmentedcControl,
-    CommentVideoNewList,
-    CommentVideoHotList,
+    CommentList,
     ReplyerVideo,
   },
   data() {

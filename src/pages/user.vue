@@ -4,11 +4,13 @@
       <UserInfo />
     </view>
     <view class="p-user_body">
-      <section class="l-link-strip-list">
-        <LinkStripList :list="linkList1" />
+      <section class="l-list">
+        <LinkList :list="linkList" type="strip" />
       </section>
-      <section class="l-link-strip-list">
-        <LinkStripList :list="linkList2" />
+      <section class="l-list">
+        <List type="strip">
+          <LogOut />
+        </List>
       </section>
     </view>
   </view>
@@ -17,31 +19,26 @@
 <script>
 import Vue from "vue";
 import UserInfo from "@/component/user-info/user-info.vue";
-import LinkStripList from "@/component/common/link-list/link-strip-list.vue";
-
+import LinkList from "@/component/common/link-list/link-list.vue";
+import LogOut from "@/component/logout/logout.vue";
+import List from "@/component/common/link-list/list.vue";
 import rankingIcon from "@/static/img/ranking.svg";
-import logoutIcon from "@/static/img/logout.svg";
 
 export default Vue.extend({
   components: {
     UserInfo,
-    LinkStripList,
+    LinkList,
+    LogOut,
+    List,
   },
   //page中的data都是关于这个页面的配置，最好不要涉及后端请求的数据
   data() {
     return {
-      linkList1: [
+      linkList: [
         {
           iconSrc: rankingIcon,
           title: "排行榜",
           url: "ranking",
-        },
-      ],
-      linkList2: [
-        {
-          iconSrc: logoutIcon,
-          title: "退出登录",
-          url: "",
         },
       ],
     };

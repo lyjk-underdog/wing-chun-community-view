@@ -1,40 +1,30 @@
 <template>
-    <VideoList :list="list" />
+  <VideoList :list="list" />
 </template>
 
 <script>
-import Vue from 'vue';
-import VideoList from './video-list.vue';
+import Vue from "vue";
+import VideoList from "./video-list.vue";
+import videoApi from "@/api/video/index.js";
 
 export default Vue.extend({
-    components:{
-        VideoList
+  components: {
+    VideoList,
+  },
+  data() {
+    return {
+      list: [],
+    };
+  },
+  methods: {
+    async fetchListState() {
+      try {
+        this.list = await videoApi.getlist("combat");
+      } catch (e) {}
     },
-    data(){
-        return {
-            list:[
-                {
-                    vid:0,
-                    title:'实战视频'
-                },
-                {
-                    vid:1,
-                    title:'实战视频'
-                },
-                {
-                    vid:2,
-                    title:'实战视频'
-                },
-                {
-                    vid:3,
-                    title:'实战视频'
-                },
-                {
-                    vid:4,
-                    title:'基本动作'
-                }
-            ]
-        }
-    }
-})
+  },
+  async created() {
+      await this.fetchListState();
+  },
+});
 </script>

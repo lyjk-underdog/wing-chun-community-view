@@ -4,12 +4,14 @@
 
 <script>
 import Vue from "vue";
-import DynamicList from './dynamic-list.vue';
+import DynamicListPresent from './present/dynamic-list.vue';
 import avatarIcon from "@/static/img/avatar.svg";
+import dynamicApi from '@/api/dynamic/index.js';
+import { getCurrentPage } from "@/utils/index.js";
 
 export default Vue.extend({
   components: {
-    DynamicList,
+    DynamicListPresent,
   },
   data() {
     return {
@@ -19,12 +21,23 @@ export default Vue.extend({
           avatar: avatarIcon,
           name: "李步东老师",
         },
-        releaseTime: "2020 06-07 15:34",
+        releaseTime: "1648312097526",
         content: "祝大家新年快乐，在牛年里顺顺利利，事业有成飞腾直上！！",
         commentsNum: "100",
         likeNum: "100",
       },
     };
   },
+  methods:{
+    async fetchDynamicState(){
+      try{
+        let route = getCurrentPage();
+        this.dynamic = await dynamicApi.getdetail(route.query.dynamicID);
+      }catch(e){}
+    }
+  },
+  async mounted(){
+    // await this.fetchDynamicState();
+  }
 });
 </script>

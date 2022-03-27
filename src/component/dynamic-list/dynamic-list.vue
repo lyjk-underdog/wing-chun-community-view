@@ -1,29 +1,36 @@
 <template>
-  <view class="c-dynamic-list">
-    <section class="l-dynamic-item" v-for="(item, index) in list" :key="index">
-      <DynamicItem :item="item" />
-    </section>
-  </view>
+  <LongList
+    :totalPage="totalPage"
+    :curPage="curPage"
+    :scrollTop.sync="scrollTop"
+    @turnPages="fetchListStateStrategy['turnPages']"
+    @refresherrefresh="fetchListStateStrategy['init']"
+  >
+    <DynamicListPresent :list="list" />
+  </LongList>
 </template>
 
 <script>
 import Vue from "vue";
-import DynamicItem from "./dynamic-item.vue";
+import DynamicListPresent from "./present/dynamic-list.vue";
+import LongList from "@/component/common/long-list/long-list.vue";
+import dynamicApi from "@/api/dynamic/index.js";
+import useLongListFetch from "@/mixin/long-list-fetch.js";
 
 export default Vue.extend({
+  mixins: [useLongListFetch],
   components: {
-    DynamicItem,
+    DynamicListPresent,
+    LongList,
   },
-  props: {
-    list: {
-      type: Array,
-      default: () => [],
-    },
+  data() {
+    return {
+      subscribeName: "onDynamicPublish",
+    };
+  },
+  methods: {
+    metaFetch: dynamicApi.getlist,
   },
 });
 </script>
-
-<style lang="scss" scoped>
-@import "./style/dynamic-list.scss";
-</style>
 

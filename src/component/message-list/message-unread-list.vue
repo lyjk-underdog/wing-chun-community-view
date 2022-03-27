@@ -3,7 +3,7 @@
     <MessageList :list="list" />
 
     <section class="l-full-read-badge-btn">
-      <FullReadBadgeBtn :unreadNum="list.length" />
+      <FullReadBadgeBtn :unreadNum="list.length" @allRead="list = []" />
     </section>
   </view>
 </template>
@@ -13,6 +13,7 @@ import Vue from "vue";
 import MessageList from './message-list.vue';
 import FullReadBadgeBtn from "./full-read-badge-btn.vue";
 import avatarIcon from "@/static/img/avatar.svg";
+import messageApi from "@/api/message/index.js";
 
 export default Vue.extend({
   components: {
@@ -31,7 +32,7 @@ export default Vue.extend({
           },
           content:
             "新年快乐！新年快乐！新年快乐！新年快乐！新年快乐！新年快乐！新年快乐！新年快乐！新年快乐！新年快乐！",
-          releaseTime: "2021-11-01",
+          releaseTime: "1648199959",
         },
         {
           id: "1",
@@ -41,7 +42,7 @@ export default Vue.extend({
             name: "笑嘻嘻",
           },
           content: "新年快乐！",
-          releaseTime: "2021-11-01",
+          releaseTime: "1648199959",
         },
         {
           id: "2",
@@ -51,7 +52,7 @@ export default Vue.extend({
             name: "浅夏",
           },
           content: "同乐同乐~",
-          releaseTime: "2021-11-01",
+          releaseTime: "1648199959",
         },
         {
           id: "3",
@@ -61,11 +62,21 @@ export default Vue.extend({
             name: "叙利亚帅哥",
           },
           content: "祝你梦想成真！",
-          releaseTime: "2021-11-01",
+          releaseTime: "1648199959",
         },
       ],
     };
   },
+  methods:{
+    async fetchListState(){
+      try{
+        this.list = await messageApi.getlist('unread');
+      }catch(e){}
+    },
+  },
+  async created(){
+    // await this.fetchListState();
+  }
 });
 </script>
 

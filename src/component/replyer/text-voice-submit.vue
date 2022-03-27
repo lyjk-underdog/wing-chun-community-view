@@ -20,6 +20,7 @@ export default Vue.extend({
   methods: {
     emitSubmitWithText() {
       this.$emit("submit", this.text);
+      this.text = "";
     },
   },
 });

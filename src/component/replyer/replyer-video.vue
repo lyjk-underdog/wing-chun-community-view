@@ -1,18 +1,26 @@
 <template>
-  <TextVoiceSubmit @submit="repaly" />
+  <TextVoiceSubmit @submit="($event) => repaly($event)" />
 </template>
 
 <script>
 import Vue from "vue";
 import TextVoiceSubmit from "./text-voice-submit.vue";
+import videoApi from "@/api/video/index.js";
+import { getCurrentPage } from "@/utils/index.js";
+import PubSub from "pubsub-js";
 
 export default Vue.extend({
   components: {
     TextVoiceSubmit,
   },
   methods: {
-    repaly(msg) {
-      console.log(msg);
+    async repaly(msg) {
+      try {
+        // let rote = getCurrentPage();
+        // await videoApi.publishcomment(rote.query.videoID, msg);
+        console.log(msg);
+        PubSub.publish("onVideoReply");
+      } catch (e) {}
     },
   },
 });

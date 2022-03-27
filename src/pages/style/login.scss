@@ -1,0 +1,25 @@
+.p-login {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    &_app-icon {
+        width: 130rpx;
+        height: 130rpx;
+        margin-bottom: 24rpx;
+    }
+
+    &_app-title {
+        font-size: 36rpx;
+        color: #333;
+        font-weight: 600;
+        margin-bottom: 72rpx;
+    }
+
+    .l-login-form {
+        width: 80%;
+    }
+
+}
