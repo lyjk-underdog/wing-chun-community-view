@@ -1,4 +1,4 @@
-export default (videoID, commentType , page , row = 10) => new Promise((resolve, reject) => {
+export default (videoID, commentType, page, row = 10) => new Promise((resolve, reject) => {
     uni.request({
         url: 'video/getcommentlist',
         method: 'GET',
@@ -9,7 +9,13 @@ export default (videoID, commentType , page , row = 10) => new Promise((resolve,
             row
         },
         success({ data }) {
-            data ? resolve(data) : reject()
+
+            let _formater = (data) => {
+
+                return { ...data, items: data.items.map(item => ({ ...item, releaseTime: item.releaseTime.slice(0, -2) })) }
+            }
+
+            data ? resolve(_formater(data)) : reject()
         }
     })
 })

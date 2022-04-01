@@ -6,32 +6,34 @@
     <view class="p-comment_body">
       <SegmentedcControl :panesVal="panesVal">
         <template v-slot:0>
-          <CommentList target="dynamic" type="new" />
+          <DynamicCommentNewList />
         </template>
         <template v-slot:1>
-          <CommentList target="dynamic" type="hot" />
+          <DynamicCommentHotList />
         </template>
       </SegmentedcControl>
     </view>
     <view class="p-comment_footer">
-      <ReplyDynamic />
+      <Reply type="dynamic" />
     </view>
   </view>
 </template>
 
 <script>
 import Vue from "vue";
-import DynamicOnly from "@/component/dynamic-list/dynamic-only.vue";
+import DynamicOnly from "@/features/dynamic/dynamic-list/dynamic-only.vue";
 import SegmentedcControl from "@/component/common/segmented-control/segmented-control.vue";
-import CommentList from "@/component/comment-list/comment-list.vue";
-import ReplyDynamic from "@/component/replyer/replyer-dynamic.vue";
+import DynamicCommentNewList from "@/features/dynamic/comment-list/comment-new-list.vue";
+import DynamicCommentHotList from "@/features/dynamic/comment-list/comment-hot-list.vue";
+import Reply from "@/component/replyer/replyer.vue";
 
 export default Vue.extend({
   components: {
     DynamicOnly,
     SegmentedcControl,
-    CommentList,
-    ReplyDynamic,
+    DynamicCommentNewList,
+    DynamicCommentHotList,
+    Reply,
   },
   data() {
     return {

@@ -8,7 +8,7 @@
 
 <script>
 import Vue from "vue";
-import DynamicForm from "@/component/dynamic-form/dynamic-form.vue";
+import DynamicForm from "@/features/dynamic/dynamic-form/dynamic-form.vue";
 
 export default Vue.extend({
   components: {

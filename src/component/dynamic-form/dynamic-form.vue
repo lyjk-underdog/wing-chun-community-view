@@ -17,7 +17,7 @@
 
 <script>
 import Vue from "vue";
-import ImgFilePicker from "@/component/common/img-file-picker/img-file-picker.vue";
+import ImgFilePicker from "./img-file-picker.vue";
 import dynamicApi from "@/api/dynamic/index.js";
 import PubSub from "pubsub-js";
 
@@ -34,7 +34,7 @@ export default Vue.extend({
   methods: {
     async publish() {
       try {
-        // await dynamicApi.publish(this.content, this.imgPaths);
+        await dynamicApi.publish(this.content, this.imgPaths);
         PubSub.publish("onDynamicPublish");
         uni.navigateBack();
       } catch (e) {}

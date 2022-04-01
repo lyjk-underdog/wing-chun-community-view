@@ -14,7 +14,7 @@
       </SegmentedcControl>
     </view>
     <view class="p-video-play_footer">
-      <ReplyerVideo />
+      <Replyer type="video" />
     </view>
   </view>
 </template>
@@ -24,14 +24,14 @@ import Vue from "vue";
 import VideoPlayer from "@/component/video-player/video-player.vue";
 import SegmentedcControl from "@/component/common/segmented-control/segmented-control.vue";
 import CommentList from "@/component/comment-list/comment-list.vue";
-import ReplyerVideo from "@/component/replyer/replyer-video.vue";
+import Replyer from "@/component/replyer/replyer.vue";
 
 export default Vue.extend({
   components: {
     VideoPlayer,
     SegmentedcControl,
     CommentList,
-    ReplyerVideo,
+    Replyer,
   },
   data() {
     return {

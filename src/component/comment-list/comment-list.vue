@@ -3,8 +3,8 @@
     :totalPage="totalPage"
     :curPage="curPage"
     :scrollTop.sync="scrollTop"
-    @turnPages="fetchListStateStrategy['turnPages']"
-    @refresherrefresh="fetchListStateStrategy['init']"
+    @turnPages="fetchListTurnPages"
+    @refresherrefresh="fetchListInit"
   >
     <CommentListPresent :list="list" />
   </LongList>
@@ -17,40 +17,13 @@ import { getCurrentPage } from "@/utils/index.js";
 import videoApi from "@/api/video/index.js";
 import dynamicApi from "@/api/dynamic/index.js";
 import LongList from "@/component/common/long-list/long-list.vue";
-import useLongListFetch from "@/mixin/long-list-fetch.js";
-
-let subscribeNameStrategy = {
-  video: {
-    new: "onVideoReply",
-    hot: null,
-  },
-  dynamic: {
-    new: "onDynamicReply",
-    hot: null,
-  },
-};
-
-let metaFetchStrategy = {
-  video: async function (page) {
-    let route = getCurrentPage();
-    return await videoApi.getcommentlist(
-      route.query.videoID,
-      this.type,
-      page
-    );
-  },
-  dynamic: async function (page) {
-    let route = getCurrentPage();
-    return await dynamicApi.getcommentlist(
-      route.query.videoID,
-      this.type,
-      page
-    );
-  },
-};
+import {
+  useFetchItems,
+  useListenPublish,
+} from "@/component/common/long-list/hooks/index.js";
 
 export default Vue.extend({
-  mixins: [useLongListFetch],
+  mixins: [useFetchItems, useListenPublish],
   components: {
     CommentListPresent,
     LongList,
@@ -65,14 +38,36 @@ export default Vue.extend({
       required: true,
     },
   },
-  data() {
-    return {
-      subscribeName: subscribeNameStrategy[this.target][this.type],
-    };
+  computed: {
+    listener() {
+      let listenerStrategy = {
+        video: {
+          new: "onVideoReply",
+          hot: null,
+        },
+        dynamic: {
+          new: "onDynamicReply",
+          hot: null,
+        },
+      };
+      return listenerStrategy[this.target][this.type];
+    },
   },
   methods: {
     async metaFetch(page) {
-      return await metaFetchStrategy[this.target].call(this,page);
+
+      let metaFetchStrategy = {
+        video: async (page) => {
+          let route = getCurrentPage();
+          return await videoApi.getcommentlist(route.query.videoID , this.type , page);
+        },
+        dynamic: async (page) => {
+          let route = getCurrentPage();
+          return await dynamicApi.getcommentlist(route.query.dynamicID , this.type , page);
+        },
+      };
+
+      return await metaFetchStrategy[this.target](page);
     },
   },
 });

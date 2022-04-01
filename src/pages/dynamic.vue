@@ -17,7 +17,7 @@
 <script>
 import Vue from "vue";
 import SegmentedcControl from "@/component/common/segmented-control/segmented-control.vue";
-import DynamicAllList from "@/component/dynamic-list/dynamic-list.vue";
+import DynamicAllList from "@/features/dynamic/dynamic-list/dynamic-all-list.vue";
 import LinkView from "@/component/common/link-list/link-view.vue";
 
 export default Vue.extend({

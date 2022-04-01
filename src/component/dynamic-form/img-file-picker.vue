@@ -1,6 +1,10 @@
 <template>
   <view class="c-img-file-picker">
-    <ImgPreviewList :list="list" @removed="($event) => removeImg($event)" />
+    <ImgPreviewList
+      :imgPaths="imgPaths"
+      :hasClose="true"
+      @removed="($event) => removeImg($event)"
+    />
     <view class="c-img-file-picker_picker-btn" @click="addImg">
       <slot name="picker">
         <img
@@ -14,9 +18,8 @@
 
 <script>
 import Vue from "vue";
-import ImgPreviewList from "./img-preview-list.vue";
-
-let uid = 0;
+import ImgPreviewList from "@/component/common/img-preview/img-preview.vue";
+import imageApi from "@/api/image/index.js";
 
 export default Vue.extend({
   components: {
@@ -24,7 +27,7 @@ export default Vue.extend({
   },
   data() {
     return {
-      list: [], //[{id:Srring,path:String}]
+      imgPaths: [], //[xxx.png]
     };
   },
   methods: {
@@ -32,32 +35,33 @@ export default Vue.extend({
       uni.chooseImage({
         count: 5,
         sizeType: "compressed",
-        success: ({ tempFilePaths, tempFiles }) => {
+        success: async ({ tempFiles }) => {
           //利用tempFiles发送网络请求，返回得到图片地址数组['http://xxxx/static/img/xxx.png']
-          //.....
-          //这里假设tempFilePaths是返回的图片地址数据
-          tempFilePaths.forEach((imgPath) => {
-            this.list.push({
-              id: uid++,
-              path: imgPath,
-            });
-          });
+
+          await this.fetchImgPaths(tempFiles);
           this.emitImgPathsChange();
         },
       });
     },
-    removeImg(target) {
+    async fetchImgPaths(files) {
+      try {
+        for (let file of files) {
+          this.imgPaths.push(await imageApi.upload(file.path));
+        }
+      } catch (e) {
+        throw e;
+      }
+    },
+    removeImg(targetPath) {
       //要先发起请求，成功删除服务器上的图片后再同步数据
       //....
       //这里假设已经成功删除服务器上的图片
-      this.list = this.list.filter((img) => img.id !== target.id);
+      console.log(targetPath)
+      this.imgPaths = this.imgPaths.filter((path) => path !== targetPath);
       this.emitImgPathsChange();
     },
     emitImgPathsChange() {
-      this.$emit(
-        "imgPathsChange",
-        this.list.map((img) => img.path)
-      );
+      this.$emit("imgPathsChange", this.imgPaths);
     },
   },
 });

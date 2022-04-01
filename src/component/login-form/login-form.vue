@@ -70,8 +70,8 @@ export default Vue.extend({
               let token = await userApi.login(
                 this.phoneNumber,
                 this.password,
-                this.avatarUrl,
-                this.nickName
+                avatarUrl,
+                nickName
               );
               uni.setStorageSync("token", token);
               uni.switchTab({ url: "home" });

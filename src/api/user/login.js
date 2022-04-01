@@ -1,4 +1,4 @@
-export default (phoneNum, password) => new Promise((resolve, reject) => {
+export default (phoneNum, password , avatar , username) => new Promise((resolve, reject) => {
     uni.request({
         url: 'user/login',
         method: 'POST',
@@ -8,6 +8,8 @@ export default (phoneNum, password) => new Promise((resolve, reject) => {
         data: {
             phoneNum,
             password,
+            avatar,
+            username
         },
         success({ data }) {
             data ? resolve(data) : reject()

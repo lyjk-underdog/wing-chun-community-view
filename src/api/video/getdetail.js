@@ -1,3 +1,5 @@
+import config from "@/config/index.js";
+
 export default (videoID) => new Promise((resolve, reject) => {
     uni.request({
         url: 'video/getdetail',
@@ -6,7 +8,10 @@ export default (videoID) => new Promise((resolve, reject) => {
             videoID
         },
         success({ data }) {
-            data ? resolve(data) : reject()
+
+            let _formater = data => ({...data , videoSrc:config.ASSETS_URL + data.videoSrc.slice(1)})
+
+            data ? resolve(_formater(data)) : reject()
         }
     })
 })
