@@ -78,5 +78,5 @@ export default Vue.extend({
 </script>
 
 <style lang="scss" scoped>
-@import "./style/long-list.scss";
+@import "./long-list.scss";
 </style>

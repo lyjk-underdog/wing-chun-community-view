@@ -1,0 +1,19 @@
+.c-long-list {
+    height: 100%;
+
+    &_scroll-view {
+        height: 100%;
+    }
+
+    .c-prompt-box {
+        background: #F6F6F8;
+        text-align: center;
+
+        &_title {
+            line-height: 80rpx;
+            color: #BFBFBF;
+            font-size: 25rpx;
+        }
+        
+    }
+}

@@ -6,32 +6,32 @@
     <view class="p-video-play_body">
       <SegmentedcControl :panesVal="panesVal">
         <template v-slot:0>
-          <CommentList target="video" type="new" />
+          <VideoCommentList type="new" />
         </template>
         <template v-slot:1>
-          <CommentList target="video" type="hot" />
+          <VideoCommentList type="hot" />
         </template>
       </SegmentedcControl>
     </view>
     <view class="p-video-play_footer">
-      <Replyer type="video" />
+      <VideoReplyer/>
     </view>
   </view>
 </template>
 
 <script>
 import Vue from "vue";
-import VideoPlayer from "@/component/video-player/video-player.vue";
-import SegmentedcControl from "@/component/common/segmented-control/segmented-control.vue";
-import CommentList from "@/component/comment-list/comment-list.vue";
-import Replyer from "@/component/replyer/replyer.vue";
+import VideoPlayer from "@/features/video/video-player.vue";
+import SegmentedcControl from "@/ui/segmented-control/segmented-control.vue";
+import VideoCommentList from "@/features/video/comment-list.vue";
+import VideoReplyer from "@/features/video/video-replyer.vue";
 
 export default Vue.extend({
   components: {
     VideoPlayer,
     SegmentedcControl,
-    CommentList,
-    Replyer,
+    VideoCommentList,
+    VideoReplyer,
   },
   data() {
     return {

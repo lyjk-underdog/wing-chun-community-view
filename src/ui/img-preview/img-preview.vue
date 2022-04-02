@@ -44,5 +44,5 @@ export default Vue.extend({
 </script>
 
 <style lang="scss" scoped>
-@import "./style/img-preview.scss";
+@import "./img-preview.scss";
 </style>

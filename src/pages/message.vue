@@ -3,10 +3,10 @@
     <view class="p-message_body">
       <SegmentedcControl :panesVal="panesVal">
         <template v-slot:0>
-          <MessageUnreadList />
+          <MessageList type="unread" />
         </template>
         <template v-slot:1>
-          <MessageReadList />
+          <MessageList type="read" />
         </template>
       </SegmentedcControl>
     </view>
@@ -15,15 +15,13 @@
 
 <script>
 import Vue from "vue";
-import SegmentedcControl from "@/component/common/segmented-control/segmented-control.vue";
-import MessageUnreadList from "@/component/message-list/message-unread-list.vue";
-import MessageReadList from "@/component/message-list/message-read-list.vue";
+import SegmentedcControl from "@/ui/segmented-control/segmented-control.vue";
+import MessageList from '@/features/message/message-list.vue';
 
 export default Vue.extend({
   components: {
     SegmentedcControl,
-    MessageUnreadList,
-    MessageReadList,
+    MessageList
   },
   data() {
     return {

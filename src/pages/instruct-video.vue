@@ -13,8 +13,8 @@
 
 <script>
 import Vue from "vue";
-import SegmentedcControl from "@/component/common/segmented-control/segmented-control.vue";
-import VideoList from "@/component/video-list/video-list.vue";
+import SegmentedcControl from "@/ui/segmented-control/segmented-control.vue";
+import VideoList from "@/features/video/video-list.vue";
 
 export default Vue.extend({
   components: {

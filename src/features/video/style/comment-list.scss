@@ -1,0 +1,11 @@
+.c-comment-list {
+    height: 100%;
+
+    .l-comment-item {
+        margin-bottom: 20rpx;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}

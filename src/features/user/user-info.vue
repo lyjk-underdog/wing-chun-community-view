@@ -1,0 +1,72 @@
+<template>
+  <view class="c-user-info">
+    <view class="c-user-info_header">
+      <img class="c-user-info_avatar" :src="user.avatar" />
+      <span class="c-user-info_name">{{ user.name }}</span>
+    </view>
+    <view class="c-user-info_footer">
+      <section
+        class="l-user-info-item"
+        v-for="(info, index) in infoList"
+        :key="index"
+      >
+        <view class="c-user-info-item">
+          <view class="c-user-info-item_header">{{ info.title }}</view>
+          <view class="c-user-info-item_footer">{{ info.num }}</view>
+        </view>
+      </section>
+    </view>
+  </view>
+</template>
+
+<script>
+import Vue from "vue";
+import userApi from "./api/index.js";
+
+export default Vue.extend({
+  data() {
+    return {
+      user: {}
+    };
+  },
+  computed: {
+    infoList() {
+      let { dynamicNum } = this.user;
+      return [
+        {
+          title: "动态",
+          num: dynamicNum,
+        },
+        {
+          title: "获赞",
+          num: 12,
+        },
+        {
+          title: "粉丝",
+          num: 11,
+        },
+        {
+          title: "关注",
+          num: 15,
+        },
+      ];
+    },
+  },
+  methods: {
+    async fetchUserInfo() {
+      try {
+        this.user = await userApi.getInfo();
+      } catch (e) {
+        throw e;
+      }
+    },
+  },
+  created(){
+    this.fetchUserInfo();
+  }
+});
+</script>
+
+<style lang="scss" scoped>
+@import "./style/user-info.scss";
+</style>

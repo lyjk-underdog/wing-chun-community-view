@@ -1,0 +1,11 @@
+.c-dynamic-list {
+    height: 100%;
+
+    .l-dynamic-item {
+        border-bottom: 20rpx solid #f7f7f7;
+
+        &:last-child {
+            border-bottom: none;
+        }
+    }
+}

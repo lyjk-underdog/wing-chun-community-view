@@ -11,7 +11,7 @@
 <script>
 import Vue from 'vue';
 import wingchunIcon from '@/static/img/wing-chun.svg';
-import LoginFrom from '@/component/login-form/login-form.vue';
+import LoginFrom from '@/features/user/login-form.vue';
 
 export default Vue.extend({
     components:{

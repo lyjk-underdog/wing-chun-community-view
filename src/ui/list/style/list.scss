@@ -1,0 +1,32 @@
+//common
+
+.c-list {
+    background: #fff;
+    border-radius: 16rpx;
+
+    &_title {
+        font-size: 32rpx;
+        color: #333333;
+        line-height: 92rpx;
+    }
+}
+
+//block
+.s-list--block {
+    .c-list {
+        &_body {
+            padding: 30rpx 30rpx 0;
+            display: flex;
+            flex-wrap: wrap;
+        }
+    }
+}
+
+//strip
+.s-list--strip {
+    .c-list {
+        &_body {
+            padding: 16rpx;
+        }
+    }
+}
