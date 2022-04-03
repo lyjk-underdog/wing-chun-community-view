@@ -1,7 +1,7 @@
-import useFetchItems from './fetch-items.js';
-import useListenPublish from './listen-publish.js';
+import useUpdateLongList from './update-long-list.js';
+import useListenToUpdate from './listen-to-update.js';
 
 export {
-    useFetchItems,
-    useListenPublish
+    useUpdateLongList,
+    useListenToUpdate
 }

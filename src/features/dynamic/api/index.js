@@ -5,6 +5,7 @@ import getCommentList from "./get-comment-list";
 import publishComment from "./publish-comment";
 import uploadImg from "./upload-img";
 import likeComment from "./like-comment";
+import like from './like.js';
 
 export default {
     getList,
@@ -13,5 +14,6 @@ export default {
     getCommentList,
     publishComment,
     uploadImg,
-    likeComment
+    likeComment,
+    like
 }

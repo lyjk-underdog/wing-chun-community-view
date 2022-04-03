@@ -9,7 +9,7 @@
       <slot name="picker">
         <img
           class="c-img-file-picker_picker-icon"
-          src="@/static/img/img-picker.svg"
+          src="./image/img-picker.svg"
         />
       </slot>
     </view>
@@ -37,13 +37,16 @@ export default Vue.extend({
         sizeType: "compressed",
         success: async ({ tempFiles }) => {
           //利用tempFiles发送网络请求，返回得到图片地址数组['http://xxxx/static/img/xxx.png']
-
-          await this.fetchImgPaths(tempFiles);
-          this.emitImgPathsChange();
+          try {
+            await this.updateImgPaths(tempFiles);
+            this.emitOnImgPathsChange();
+          } catch (e) {
+            throw e;
+          }
         },
       });
     },
-    async fetchImgPaths(files) {
+    async updateImgPaths(files) {
       try {
         for (let file of files) {
           this.imgPaths.push(await dynamicApi.uploadImg(file.path));
@@ -57,9 +60,9 @@ export default Vue.extend({
       //....
       //这里假设已经成功删除服务器上的图片
       this.imgPaths = this.imgPaths.filter((path) => path !== targetPath);
-      this.emitImgPathsChange();
+      this.emitOnImgPathsChange();
     },
-    emitImgPathsChange() {
+    emitOnImgPathsChange() {
       this.$emit("imgPathsChange", this.imgPaths);
     },
   },

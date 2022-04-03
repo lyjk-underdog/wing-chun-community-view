@@ -26,12 +26,12 @@ import userApi from "./api/index.js";
 export default Vue.extend({
   data() {
     return {
-      user: {}
+      user: {},
     };
   },
   computed: {
     infoList() {
-      let { dynamicNum } = this.user;
+      let { dynamicNum, likeNum } = this.user;
       return [
         {
           title: "动态",
@@ -39,7 +39,7 @@ export default Vue.extend({
         },
         {
           title: "获赞",
-          num: 12,
+          num: likeNum,
         },
         {
           title: "粉丝",
@@ -53,7 +53,7 @@ export default Vue.extend({
     },
   },
   methods: {
-    async fetchUserInfo() {
+    async updateUserInfoOnInit() {
       try {
         this.user = await userApi.getInfo();
       } catch (e) {
@@ -61,9 +61,9 @@ export default Vue.extend({
       }
     },
   },
-  created(){
-    this.fetchUserInfo();
-  }
+  created() {
+    this.updateUserInfoOnInit();
+  },
 });
 </script>
 

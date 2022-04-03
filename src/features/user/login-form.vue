@@ -73,7 +73,7 @@ export default Vue.extend({
                 nickName
               );
               uni.setStorageSync("token", token);
-              uni.switchTab({ url: "home" });
+              uni.switchTab({ url: "/pages/home/home" });
             } catch (e) {}
           },
           failCb: () => {

@@ -4,11 +4,21 @@
       :totalPage="totalPage"
       :curPage="curPage"
       :scrollTop.sync="scrollTop"
-      @turnPages="fetchListTurnPages"
-      @refresherrefresh="fetchListInit"
+      @turnPages="updateLongListOnTurnPages"
+      @refresherrefresh="updateLongListOnInit"
     >
-      <section class="l-comment-item" v-for="comment in list" :key="comment.id">
-        <CommentItem :comment="comment" />
+      <section
+        class="l-comment-item"
+        v-for="comment in list"
+        :key="comment.commentID"
+      >
+        <CommentItem
+          :comment="comment"
+          @liked="
+            (targetCommentID) =>
+              updateTargetLikeInfoOnlike(targetCommentID, 'commentID')
+          "
+        />
       </section>
     </LongList>
   </view>
@@ -18,12 +28,16 @@
 import Vue from "vue";
 import CommentItem from "./comment-item.vue";
 import LongList from "@/ui/long-list/long-list.vue";
-import { useFetchItems , useListenPublish } from "@/hooks/long-list/index.js";
-import dynamicApi from './api/index.js';
+import {
+  useUpdateLongList,
+  useListenToUpdate,
+} from "@/hooks/long-list/index.js";
+import { useLike } from "@/hooks/like.js";
+import dynamicApi from "./api/index.js";
 import { getCurrentPage } from "@/utils/index.js";
 
 export default Vue.extend({
-  mixins:[useFetchItems , useListenPublish],
+  mixins: [useUpdateLongList, useListenToUpdate, useLike],
   components: {
     CommentItem,
     LongList,
@@ -34,21 +48,26 @@ export default Vue.extend({
       required: true,
     },
   },
-  computed:{
-    listener(){
+  computed: {
+    listener() {
       let Strategy = {
-        'new':'onDynamicReply',
-        'hot':null
-      }
+        latest: "onDynamicReply",
+        hot: null,
+      };
 
       return Strategy[this.type];
-    }
+    },
   },
   methods: {
-    async metaFetch(page) {
+    async getLongListInOnePage(page) {
       let route = getCurrentPage();
-      return await dynamicApi.getCommentList(route.query.dynamicID, this.type, page);
+      return await dynamicApi.getCommentList(
+        route.query.dynamicID,
+        this.type,
+        page
+      );
     },
+    like: dynamicApi.likeComment,
   },
 });
 </script>

@@ -4,28 +4,28 @@ let errHandleStrategy = {
     '400'(message) {
         uni.showToast({
             title: message,
-            icon: 'error',
+            icon: 'none',
         });
     },
     '401'() {
         uni.showToast({
             title: '登录已失效',
-            icon: 'error',
+            icon: 'none',
         });
-        uni.redirectTo({ url: 'login' });
+        uni.redirectTo({ url: '/pages/login/login' });
     },
     '500'(message) {
         uni.showToast({
             title: message,
-            icon: 'error',
+            icon: 'none',
         });
     }
 }
 
 let methods = ['request', 'uploadFile'];
 
-uni.addInterceptor('uploadFile' , {
-    success(res){
+uni.addInterceptor('uploadFile', {
+    success(res) {
         res.data = JSON.parse(res.data);
     }
 })
@@ -42,15 +42,15 @@ methods.forEach(method => {
                 options.url = config.BASE_URL + options.url;
             }
 
-            // let _showLoading = (title) => {
-            //     uni.showToast({
-            //         title,
-            //         icon: 'loading',
-            //         mask: true
-            //     })
-            // }
+            let _showLoading = (title) => {
+                const blacklist = [
+                    'upload/'
+                ]
 
-            // _showLoading('加载中');
+                blacklist.indexOf(options.url) !== -1 && uni.showToast({ title, icon: 'loading', mask: true });
+            }
+
+            _showLoading('加载中');
             _setHeader();
             _setURL();
         },
@@ -61,13 +61,13 @@ methods.forEach(method => {
                 errMsg
             } = res;
 
-            // let _hideToast = () => uni.hideToast();
+            let _hideToast = () => uni.hideToast();
 
             let _httpCodeHandle = () => {
                 if (statusCode !== 200) {
                     uni.showToast({
                         title: errMsg,
-                        icon: 'error'
+                        icon: 'none'
                     });
                     throw new Error(errMsg);
                 }
@@ -83,7 +83,7 @@ methods.forEach(method => {
             }
 
             try {
-                // _hideToast();
+                _hideToast();
                 _httpCodeHandle();
                 _selfHttpCodeHandle();
             } catch (e) { throw e }

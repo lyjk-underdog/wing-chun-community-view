@@ -33,7 +33,17 @@ export default Vue.extend({
   },
   methods: {
     async publish() {
+      let _ifConnentNll = () => {
+        if (!this.content) {
+          uni.showToast({
+            title: "内容不能为空",
+            icon: "none",
+          });
+          throw new Error("content为空");
+        }
+      };
       try {
+        _ifConnentNll();
         await dynamicApi.publish(this.content, this.imgPaths);
         PubSub.publish("onDynamicPublish");
         uni.navigateBack();

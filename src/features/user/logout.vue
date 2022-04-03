@@ -19,8 +19,12 @@ export default Vue.extend({
   },
   methods: {
     logout() {
-      uni.setStorageSync("token", "");
-      uni.redirectTo({ url: "login" });
+      try {
+        uni.setStorageSync("token", "");
+        uni.navigateTo({ url: "/pages/login/login" });
+      } catch (e) {
+        throw e;
+      }
     },
   },
 });

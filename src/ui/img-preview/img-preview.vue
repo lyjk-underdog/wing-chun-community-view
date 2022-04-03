@@ -10,7 +10,7 @@
         <img
           v-if="hasClose"
           class="c-img-preview-item_close-icon"
-          src="@/static/img/close.svg"
+          src="./close.svg"
           @click="$emit('removed', path)"
         />
       </view>

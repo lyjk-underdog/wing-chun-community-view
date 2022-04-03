@@ -1,15 +1,8 @@
-export default (msgType , page , row = 10) => new Promise((resolve, reject) => {
-
-    let msgTypeStrategy = {
-        'read':1,
-        'unread':0
-    }
-
+export default (page , row = 10) => new Promise((resolve, reject) => {
     uni.request({
         url: 'message/getlist',
         method: 'GET',
         data:{
-            msgType:msgTypeStrategy[msgType],
             page,
             row
         },

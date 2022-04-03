@@ -27,7 +27,7 @@ import LinkView from "@/ui/link-view.vue";
 import List from "@/ui/list/list.vue";
 import ListItem from "@/ui/list/list-item.vue";
 import LogOut from "@/features/user/logout.vue";
-import rankingIcon from "@/static/img/ranking.svg";
+import rankLinkIcon from "./rank-link.svg";
 
 export default Vue.extend({
   components: {
@@ -43,9 +43,9 @@ export default Vue.extend({
     return {
       linkList: [
         {
-          iconSrc: rankingIcon,
+          iconSrc: rankLinkIcon,
           title: "排行榜",
-          url: "ranking",
+          url: "ranking/ranking",
         },
       ],
     };
@@ -54,5 +54,5 @@ export default Vue.extend({
 </script>
 
 <style lang="scss" scoped>
-@import "./style/user.scss";
+@import "./user.scss";
 </style>

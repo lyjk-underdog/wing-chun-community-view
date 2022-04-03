@@ -1,19 +1,19 @@
 <template>
-  <view class="p-comment">
-    <view class="p-comment_header">
+  <view class="p-dynamic-comment">
+    <view class="p-dynamic-comment_header">
       <DynamicOnly />
     </view>
-    <view class="p-comment_body">
+    <view class="p-dynamic-comment_body">
       <SegmentedcControl :panesVal="panesVal">
         <template v-slot:0>
-          <DynamicCommentList type="new" />
+          <DynamicCommentList type="latest" />
         </template>
         <template v-slot:1>
           <DynamicCommentList type="hot" />
         </template>
       </SegmentedcControl>
     </view>
-    <view class="p-comment_footer">
+    <view class="p-dynamic-comment_footer">
       <DynamicReplyer />
     </view>
   </view>
@@ -42,5 +42,5 @@ export default Vue.extend({
 </script>
 
 <style lang="scss" scoped>
-@import "./style/comment.scss";
+@import "./dynamic-comment.scss";
 </style>

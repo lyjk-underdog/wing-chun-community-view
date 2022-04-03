@@ -1,7 +1,14 @@
 <template>
-  <LinkView :url="`comment?dynamicID=${message.dynamicID}`">
-    <view class="c-message-item" @click="read">
-      <img class="c-message-item_avatar" :src="message.user.avatar" />
+  <LinkView :url="`dynamic-comment/dynamic-comment?dynamicID=${message.dynamicID}`">
+    <view class="c-message-item" @click="emitOnRead">
+      <UniBadge
+        type="error"
+        :is-dot="true"
+        :text="message.msgType === 1 ? 0 : 1"
+        absolute="leftTop"
+      >
+        <img class="c-message-item_avatar" :src="message.user.avatar" />
+      </UniBadge>
       <view class="c-message-item_body">
         <view class="c-message-item_username">{{ message.user.name }}</view>
         <view class="c-message-item_content">{{ message.content }}</view>
@@ -16,20 +23,22 @@
 <script>
 import Vue from "vue";
 import LinkView from "@/ui/link-view.vue";
-import messageApi from "./api/index.js";
-import PubSub from "pubsub-js";
+import UniBadge from "@dcloudio/uni-ui/lib/uni-badge/uni-badge.vue";
 
 export default Vue.extend({
   components: {
     LinkView,
+    UniBadge,
   },
-  props: ["message", "type"],
+  props: {
+    message: {
+      type: Object,
+      required: true,
+    },
+  },
   methods: {
-    async read() {
-      if (this.type === "unread") {
-        messageApi.readMsg("one", this.message.commentID);
-        PubSub.publish("onUnreadMsgReaded");
-      }
+    emitOnRead() {
+      this.message.msgType === 0 && this.$emit("read", this.message.commentID);
     },
   },
 });

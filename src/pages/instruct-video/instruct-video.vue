@@ -30,5 +30,5 @@ export default Vue.extend({
 </script>
 
 <style lang="scss" scoped>
-@import "./style/instruct-video.scss";
+@import "./instruct-video.scss";
 </style>

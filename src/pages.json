@@ -1,58 +1,58 @@
 {
 	"pages": [
 		{
-			"path": "pages/home"
+			"path": "pages/home/home"
 		},
 		{
-			"path":"pages/dynamic",
+			"path":"pages/dynamic/dynamic",
 			"style":{
 				"navigationBarTitleText":"动态"
 			}
 		},
 		{
-			"path": "pages/user",
+			"path": "pages/user/user",
 			"style":{
 				"navigationBarTitleText":"个人中心"
 			}
 		},
 		{
-			"path":"pages/comment",
+			"path":"pages/dynamic-comment/dynamic-comment",
 			"style":{
 				"navigationBarTitleText":"评论"
 			}
 		},
 		{
-			"path":"pages/release-dynamic",
+			"path":"pages/dynamic-publish/dynamic-publish",
 			"style":{
 				"navigationBarTitleText":"写动态"
 			}
 		},
 		{
-			"path":"pages/instruct-video",
+			"path":"pages/instruct-video/instruct-video",
 			"style":{
 				"navigationBarTitleText":"教学视频"
 			}
 		},
 		{
-			"path":"pages/ranking",
+			"path":"pages/ranking/ranking",
 			"style":{
 				"navigationBarTitleText":"排行榜"
 			}
 		},
 		{
-			"path":"pages/message",
+			"path":"pages/message/message",
 			"style":{
 				"navigationBarTitleText":"消息"
 			}
 		},
 		{
-			"path":"pages/video-play",
+			"path":"pages/video-play/video-play",
 			"style":{
 				"navigationBarTitleText":"视频播放"
 			}
 		},
 		{
-			"path":"pages/login",
+			"path":"pages/login/login",
 			"style":{
 				"navigationBarTitleText":"登录授权"
 			}
@@ -70,28 +70,28 @@
 		"selectedColor":"#2A77FF",
 		"list":[
 			{
-				"pagePath":"pages/home",
+				"pagePath":"pages/home/home",
 				"text":"首页",
-				"iconPath":"static/img/tab-bar/home.png",
-				"selectedIconPath":"static/img/tab-bar/home--active.png"
+				"iconPath":"static/image/tab-bar/home.png",
+				"selectedIconPath":"static/image/tab-bar/home--active.png"
 			},
 			{
-				"pagePath":"pages/dynamic",
+				"pagePath":"pages/dynamic/dynamic",
 				"text":"动态",
-				"iconPath":"static/img/tab-bar/dynamic.png",
-				"selectedIconPath":"static/img/tab-bar/dynamic--active.png"
+				"iconPath":"static/image/tab-bar/dynamic.png",
+				"selectedIconPath":"static/image/tab-bar/dynamic--active.png"
 			},
 			{
-				"pagePath":"pages/message",
+				"pagePath":"pages/message/message",
 				"text":"消息",
-				"iconPath":"static/img/tab-bar/msg.png"	,
-				"selectedIconPath":"static/img/tab-bar/msg--active.png"
+				"iconPath":"static/image/tab-bar/msg.png"	,
+				"selectedIconPath":"static/image/tab-bar/msg--active.png"
 			},
 			{
-				"pagePath":"pages/user",
+				"pagePath":"pages/user/user",
 				"text":"我的",
-				"iconPath":"static/img/tab-bar/user.png",
-				"selectedIconPath":"static/img/tab-bar/user--active.png"
+				"iconPath":"static/image/tab-bar/user.png",
+				"selectedIconPath":"static/image/tab-bar/user--active.png"
 			}
 		]
 	}

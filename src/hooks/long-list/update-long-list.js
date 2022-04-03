@@ -1,4 +1,4 @@
-//参数：metaFetch
+//参数：getLongListInOnePage
 
 export default {
     data() {
@@ -9,27 +9,24 @@ export default {
         }
     },
     methods: {
-        async metaFetch(){
-            throw new Error("metaFetch未实现")
-        },
-        async fetchListInit() {
+        async updateLongListOnInit() {
             try {
-                let { totalPage, items } = await this.metaFetch(1);
+                let { totalPage, items } = await this.getLongListInOnePage(1);
 
                 this.totalPage = totalPage;
                 this.curPage = 1;
                 this.list = items;
             } catch (e) { throw e }
         },
-        async fetchListTurnPages() {
+        async updateLongListOnTurnPages() {
             try {
-                let { items } = await this.metaFetch(this.curPage + 1);
+                let { items } = await this.getLongListInOnePage(this.curPage + 1);
                 this.list.push(...items);
                 this.curPage++;
             } catch (e) { throw e }
         }
     },
     mounted(){
-        this.fetchListInit();
+        this.updateLongListOnInit();
     }
 }

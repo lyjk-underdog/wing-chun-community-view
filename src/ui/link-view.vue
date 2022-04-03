@@ -14,7 +14,7 @@ export default Vue.extend({
   methods: {
     linkToTargetPage() {
       uni.navigateTo({
-        url:this.url,
+        url:'/pages/' + this.url,
       });
     },
   },

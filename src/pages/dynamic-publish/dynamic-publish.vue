@@ -1,6 +1,6 @@
 <template>
-  <view class="p-release-dynamic">
-    <view class="p-release-dynamic_body">
+  <view class="p-dynamic-publish">
+    <view class="p-dynamic-publish_body">
       <DynamicForm />
     </view>
   </view>
@@ -18,7 +18,7 @@ export default Vue.extend({
 </script>
 
 <style lang="scss" scoped>
-@import "./style/release-dynamic.scss";
+@import "./dynamic-publish.scss";
 </style>
 
 

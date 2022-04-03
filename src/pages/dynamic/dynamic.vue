@@ -8,9 +8,9 @@
       </SegmentedcControl>
     </view>
 
-    <LinkView url="release-dynamic">
-      <img class="p-dynamic_link-icon" src="@/static/img/add.svg" />
-    </LinkView>
+    <section class="l-dynamic-add-btn">
+      <DynamicAddBtn />
+    </section>
   </view>
 </template>
 
@@ -18,13 +18,13 @@
 import Vue from "vue";
 import SegmentedcControl from "@/ui/segmented-control/segmented-control.vue";
 import DynamicAllList from "@/features/dynamic/dynamic-list.vue";
-import LinkView from "@/ui/link-view.vue";
+import DynamicAddBtn from "@/features/dynamic/dynamic-add-btn.vue";
 
 export default Vue.extend({
   components: {
     SegmentedcControl,
     DynamicAllList,
-    LinkView
+    DynamicAddBtn
   },
   data() {
     return {
@@ -35,6 +35,6 @@ export default Vue.extend({
 </script>
 
 <style lang="scss" scoped>
-@import "./style/dynamic.scss";
+@import "./dynamic.scss";
 </style>
 

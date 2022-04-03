@@ -25,7 +25,7 @@ export default Vue.extend({
     };
   },
   methods: {
-    async fetchList() {
+    async updateVideoListOnInit() {
       try {
         this.list = await videoApi.getList(this.type);
       } catch (e) {
@@ -34,7 +34,7 @@ export default Vue.extend({
     },
   },
   async created() {
-    await this.fetchList();
+    await this.updateVideoListOnInit();
   },
 });
 </script>

@@ -1,6 +1,6 @@
 <template>
   <view class="c-text-voice-submit">
-    <img class="c-text-voice-submit_voice-icon" src="@/static/img/voice.svg" />
+    <img class="c-text-voice-submit_voice-icon" src="./voice.svg" />
     <input class="c-text-voice-submit_input" type="text" v-model="text" />
     <view class="c-text-voice-submit_send-btn" @click="emitSubmitWithText"
       >发送</view

@@ -1,6 +1,6 @@
 import PubSub from 'pubsub-js';
 
-//参数：listener ， fetchListInit
+//参数：listener ， updateLongListOnInit
 
 export default {
     data(){
@@ -10,7 +10,7 @@ export default {
     },
     created(){
         this.listener && PubSub.subscribe(this.listener, () => {
-            this.fetchListInit();
+            this.updateLongListOnInit();
             this.scrollTop = 0;
         });
     }

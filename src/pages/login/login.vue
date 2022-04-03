@@ -10,7 +10,7 @@
 
 <script>
 import Vue from 'vue';
-import wingchunIcon from '@/static/img/wing-chun.svg';
+import wingchunIcon from './wing-chun.svg';
 import LoginFrom from '@/features/user/login-form.vue';
 
 export default Vue.extend({
@@ -28,5 +28,5 @@ export default Vue.extend({
 </script>
 
 <style lang="scss" scoped>
-@import './style/login.scss';
+@import './login.scss';
 </style>

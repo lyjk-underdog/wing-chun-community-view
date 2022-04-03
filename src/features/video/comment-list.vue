@@ -4,8 +4,8 @@
       :totalPage="totalPage"
       :curPage="curPage"
       :scrollTop.sync="scrollTop"
-      @turnPages="fetchListTurnPages"
-      @refresherrefresh="fetchListInit"
+      @turnPages="updateLongListOnTurnPages"
+      @refresherrefresh="updateLongListOnInit"
     >
       <section
         class="l-comment-item"
@@ -14,7 +14,10 @@
       >
         <CommentItem
           :comment="comment"
-          @liked="(targetCommentID) => likeCommentByPost(targetCommentID)"
+          @liked="
+            (targetCommentID) =>
+              updateTargetLikeInfoOnlike(targetCommentID, 'commentID')
+          "
         />
       </section>
     </LongList>
@@ -25,12 +28,16 @@
 import Vue from "vue";
 import CommentItem from "./comment-item.vue";
 import LongList from "@/ui/long-list/long-list.vue";
-import { useFetchItems, useListenPublish } from "@/hooks/long-list/index.js";
+import {
+  useUpdateLongList,
+  useListenToUpdate,
+} from "@/hooks/long-list/index.js";
+import { useLike } from "@/hooks/like.js";
 import videoApi from "./api/index.js";
 import { getCurrentPage } from "@/utils/index.js";
 
 export default Vue.extend({
-  mixins: [useFetchItems, useListenPublish],
+  mixins: [useUpdateLongList, useListenToUpdate, useLike],
   components: {
     CommentItem,
     LongList,
@@ -44,7 +51,7 @@ export default Vue.extend({
   computed: {
     listener() {
       let Strategy = {
-        new: "onVideoReply",
+        latest: "onVideoReply",
         hot: null,
       };
 
@@ -52,7 +59,7 @@ export default Vue.extend({
     },
   },
   methods: {
-    async metaFetch(page) {
+    async getLongListInOnePage(page) {
       let route = getCurrentPage();
       return await videoApi.getCommentList(
         route.query.videoID,
@@ -60,18 +67,7 @@ export default Vue.extend({
         page
       );
     },
-    async likeCommentByPost(targetCommentID) {
-      try {
-        await videoApi.likeComment(targetCommentID);
-        this.list = this.list.map((comment) =>
-          comment.commentID === targetCommentID
-            ? { ...comment, likeNum: comment.likeNum + 1, likeType: 1 }
-            : { ...comment }
-        );
-      } catch (e) {
-        throw e;
-      }
-    },
+    like: videoApi.likeComment,
   },
 });
 </script>

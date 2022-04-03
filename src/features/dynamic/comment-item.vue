@@ -5,7 +5,7 @@
         <img :src="comment.user.avatar" />
         <span>{{ comment.user.name }}</span>
       </view>
-      <view class="c-comment-item_like" @click="like">
+      <view class="c-comment-item_like" @click="emitOnLiked">
         <span>{{ comment.likeNum }}</span>
         <img :src="comment.likeType === 1 ? likeIconActive : likeIcon" />
       </view>
@@ -23,27 +23,25 @@
 import Vue from "vue";
 import likeIcon from "./image/like.svg";
 import likeIconActive from "./image/like--active.svg";
-import dynamicApi from "./api/index.js";
 
 export default Vue.extend({
-  props: ["comment"],
+  props: {
+    comment:{
+      type:Object,
+      required:true
+    }
+  },
   data() {
     return {
       likeIcon,
       likeIconActive,
     };
   },
-  methods: {
-    async like() {
-      try {
-        this.comment.likeType === 0 &&
-          (await dynamicApi.likeComment(this.comment.commentID));
-        this.comment.likeType = 1;
-      } catch (e) {
-        throw e;
-      }
-    },
-  },
+  methods:{
+    emitOnLiked(){
+      this.comment.likeType === 0 && this.$emit('liked' , this.comment.commentID);
+    }
+  }
 });
 </script>
 

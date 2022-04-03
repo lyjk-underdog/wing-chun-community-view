@@ -6,7 +6,7 @@
     <view class="p-video-play_body">
       <SegmentedcControl :panesVal="panesVal">
         <template v-slot:0>
-          <VideoCommentList type="new" />
+          <VideoCommentList type="latest" />
         </template>
         <template v-slot:1>
           <VideoCommentList type="hot" />
@@ -42,5 +42,5 @@ export default Vue.extend({
 </script>
 
 <style lang="scss" scoped>
-@import "./style/video-play.scss";
+@import "./video-play.scss";
 </style>

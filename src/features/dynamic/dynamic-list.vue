@@ -4,15 +4,21 @@
       :totalPage="totalPage"
       :curPage="curPage"
       :scrollTop.sync="scrollTop"
-      @turnPages="fetchListTurnPages"
-      @refresherrefresh="fetchListInit"
+      @turnPages="updateLongListOnTurnPages"
+      @refresherrefresh="updateLongListOnInit"
     >
       <section
         class="l-dynamic-item"
-        v-for="(item, index) in list"
-        :key="index"
+        v-for="dynamic in list"
+        :key="dynamic.dynamicID"
       >
-        <DynamicItem :item="item" />
+        <DynamicItem
+          :dynamic="dynamic"
+          @liked="
+            (targetDynamicID) =>
+              updateTargetLikeInfoOnlike(targetDynamicID, 'dynamicID')
+          "
+        />
       </section>
     </LongList>
   </view>
@@ -22,11 +28,15 @@
 import Vue from "vue";
 import DynamicItem from "./dynamic-item.vue";
 import LongList from "@/ui/long-list/long-list.vue";
-import dynamicApi from './api/index.js';
-import { useFetchItems , useListenPublish } from "@/hooks/long-list/index.js";
+import dynamicApi from "./api/index.js";
+import {
+  useUpdateLongList,
+  useListenToUpdate,
+} from "@/hooks/long-list/index.js";
+import { useLike } from "@/hooks/like.js";
 
 export default Vue.extend({
-  mixins: [useFetchItems , useListenPublish],
+  mixins: [useUpdateLongList, useListenToUpdate, useLike],
   components: {
     DynamicItem,
     LongList,
@@ -37,7 +47,8 @@ export default Vue.extend({
     };
   },
   methods: {
-    metaFetch: dynamicApi.getList,
+    getLongListInOnePage: dynamicApi.getList,
+    like: dynamicApi.like,
   },
 });
 </script>
