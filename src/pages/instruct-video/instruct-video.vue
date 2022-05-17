@@ -1,11 +1,8 @@
 <template>
   <view class="p-instruct-video">
     <SegmentedcControl :panesVal="panesVal">
-      <template v-slot:0>
-        <VideoList type="basic" />
-      </template>
-      <template v-slot:1>
-        <VideoList type="combat" />
+      <template v-for="(category , index) in categoryList" :slot="index">
+        <VideoList :key="index" type="combat" :categoryId="category.id" />
       </template>
     </SegmentedcControl>
   </view>
@@ -16,15 +13,34 @@ import Vue from "vue";
 import SegmentedcControl from "@/ui/segmented-control/segmented-control.vue";
 import VideoList from "@/features/video/video-list.vue";
 
+import videoApi from "@/features/video/api/index.js";
+
 export default Vue.extend({
   components: {
     SegmentedcControl,
-    VideoList
+    VideoList,
   },
   data() {
     return {
-      panesVal: ["基础", "实战"],
+      categoryList: [],
     };
+  },
+  computed:{
+    panesVal(){
+      return this.categoryList.map(category => category.name);
+    }
+  },
+  methods: {
+    async getCategory() {
+      try {
+        this.categoryList = await videoApi.getCategory();
+      } catch (e) {
+        console.error(e);
+      }
+    },
+  },
+  created() {
+    this.getCategory();
   },
 });
 </script>

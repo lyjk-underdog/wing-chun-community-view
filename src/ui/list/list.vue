@@ -1,7 +1,7 @@
 <template>
   <view :class="['s-list--' + type]">
+    <view v-if="title" class="c-list_title">{{ title }}</view>
     <view class="c-list">
-      <view v-if="title" class="c-list_title">{{ title }}</view>
       <view class="c-list_body">
         <slot></slot>
       </view>

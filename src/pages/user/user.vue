@@ -13,6 +13,7 @@
       </section>
       <section class="l-list">
         <List type="strip">
+          <PasswordModify />
           <LogOut />
         </List>
       </section>
@@ -28,6 +29,9 @@ import List from "@/ui/list/list.vue";
 import ListItem from "@/ui/list/list-item.vue";
 import LogOut from "@/features/user/logout.vue";
 import rankLinkIcon from "./rank-link.svg";
+import learnIcon from '@/static/image/user/learn.svg';
+
+import PasswordModify from './components/password-modify.vue';
 
 export default Vue.extend({
   components: {
@@ -36,7 +40,8 @@ export default Vue.extend({
     List,
     ListItem,
     List,
-    LogOut
+    LogOut,
+    PasswordModify
   },
   //page中的data都是关于这个页面的配置，最好不要涉及后端请求的数据
   data() {
@@ -45,8 +50,13 @@ export default Vue.extend({
         {
           iconSrc: rankLinkIcon,
           title: "排行榜",
-          url: "ranking/ranking",
+          url: "ranking/index",
         },
+        {
+          iconSrc: learnIcon,
+          title: "学习记录",
+          url: "learn-record/index"
+        }
       ],
     };
   },

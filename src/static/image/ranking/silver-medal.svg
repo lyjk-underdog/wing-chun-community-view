@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="80" height="80.001" viewBox="0 0 80 80.001">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fc2525;
+      }
+
+      .cls-2 {
+        fill: rgba(255,255,255,0);
+      }
+
+      .cls-3 {
+        clip-path: url(#clip-path);
+      }
+
+      .cls-4 {
+        fill: rgba(0,0,0,0.49);
+      }
+
+      .cls-5 {
+        clip-path: url(#clip-path-2);
+      }
+
+      .cls-6 {
+        fill: #cacaca;
+      }
+
+      .cls-7 {
+        fill: #fff;
+      }
+    </style>
+    <clipPath id="clip-path">
+      <path id="矩形_35" data-name="矩形 35" class="cls-1" d="M12.579,31.163v0L11.737,18.1,0,23.9,13.8,0,26.379,7.263l-13.8,23.9Z"/>
+    </clipPath>
+    <clipPath id="clip-path-2">
+      <path id="矩形_35_拷贝" data-name="矩形 35 拷贝" class="cls-1" d="M13.68,31.231v0L0,7.278,12.471,0l13.68,23.953L14.516,18.137,13.68,31.229Z"/>
+    </clipPath>
+  </defs>
+  <g id="组_1964" data-name="组 1964" transform="translate(-47 -608)">
+    <rect id="矩形_796" data-name="矩形 796" class="cls-2" width="80" height="80" transform="translate(47 608)"/>
+    <g id="组_12" data-name="组 12" transform="translate(-376.84 -78.307)">
+      <g id="矩形_35-2" data-name="矩形 35" transform="translate(429.84 735.144)">
+        <path id="矩形_35-3" data-name="矩形 35" class="cls-1" d="M12.579,31.163v0L11.737,18.1,0,23.9,13.8,0,26.379,7.263l-13.8,23.9Z" transform="translate(0)"/>
+        <g id="Clip" class="cls-3" transform="translate(0)">
+          <path id="矩形_36_拷贝" data-name="矩形 36 拷贝" class="cls-4" d="M452.7,743.99,430,750.1l4.181,15.678,22.7-6.111Z" transform="translate(-432.788 -750.284)"/>
+        </g>
+      </g>
+      <g id="矩形_35_拷贝-2" data-name="矩形 35 拷贝" transform="translate(471.825 734.668)">
+        <path id="矩形_35_拷贝-3" data-name="矩形 35 拷贝" class="cls-1" d="M13.68,31.231v0L0,7.278,12.471,0l13.68,23.953L14.516,18.137,13.68,31.229Z" transform="translate(0 0)"/>
+        <g id="Clip-2" data-name="Clip" class="cls-5" transform="translate(0 0)">
+          <path id="矩形_36" data-name="矩形 36" class="cls-4" d="M479.876,744.146l22.449,6.015-4.135,15.434-22.449-6.015Z" transform="translate(-476.653 -749.851)"/>
+        </g>
+      </g>
+      <path id="矩形_36_拷贝_2" data-name="矩形 36 拷贝 2" class="cls-6" d="M29.359,61.717l-4.734,2.748-2.65-4.615L16.691,61.28l-1.362-5.133-5.47.013.012-5.318L4.577,49.437,5.965,44.3,1.214,41.577l2.67-4.6L0,33.114l3.769-3.75L1.017,24.626l4.612-2.647L4.2,16.692l5.14-1.363L9.322,9.851l5.318.014,1.4-5.294,5.133,1.39L23.9,1.211l4.6,2.671L32.365,0l3.752,3.77,4.736-2.75L43.5,5.633,48.788,4.2l1.367,5.15,5.483-.013-.012,5.32,5.292,1.4L59.529,21.2l4.749,2.727-2.671,4.6,3.882,3.862-3.771,3.752,2.75,4.735-4.614,2.648,1.431,5.285-5.142,1.363.014,5.474-5.32-.014-1.4,5.292L44.3,59.534l-2.725,4.747-4.6-2.672-3.861,3.88Z" transform="translate(431.221 686.307)"/>
+      <path id="路径_772" data-name="路径 772" class="cls-7" d="M16.676,0,22.07,10.4,33.352,12.16l-8.11,7.3,1.741,12.372L16.676,26.714,6.37,31.836,9.231,20.974,0,12.16,11.5,10.4Z" transform="translate(447.164 702.889)"/>
+    </g>
+  </g>
+</svg>

@@ -34,7 +34,7 @@
 			}
 		},
 		{
-			"path":"pages/ranking/ranking",
+			"path":"pages/ranking/index",
 			"style":{
 				"navigationBarTitleText":"排行榜"
 			}
@@ -55,6 +55,24 @@
 			"path":"pages/login/login",
 			"style":{
 				"navigationBarTitleText":"登录授权"
+			}
+		},
+		{
+			"path":"pages/learn-record/index",
+			"style":{
+				"navigationBarTitleText":"学习记录"
+			}
+		},
+		{
+			"path":"pages/articles",
+			"style":{
+				"navigationBarTitleText":"教学文章"
+			}
+		},
+		{
+			"path":"pages/article-detail",
+			"style":{
+				"navigationBarTitleText":"文章详情"
 			}
 		}
 	],

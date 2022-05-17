@@ -8,7 +8,7 @@
 
 <script>
 import Vue from "vue";
-import VideoItem from './video-item.vue';
+import VideoItem from "./video-item.vue";
 import videoApi from "./api/index.js";
 
 export default Vue.extend({
@@ -16,8 +16,10 @@ export default Vue.extend({
     VideoItem,
   },
   props: {
-    type: String,
-    required: true,
+    categoryId: {
+      type: [String , Number],
+      required: true,
+    },
   },
   data() {
     return {
@@ -27,7 +29,7 @@ export default Vue.extend({
   methods: {
     async updateVideoListOnInit() {
       try {
-        this.list = await videoApi.getList(this.type);
+        this.list = await videoApi.getList(this.categoryId);
       } catch (e) {
         throw e;
       }
@@ -40,5 +42,5 @@ export default Vue.extend({
 </script>
 
 <style lang="scss" scoped>
-@import './style/video-list.scss';
+@import "./style/video-list.scss";
 </style>

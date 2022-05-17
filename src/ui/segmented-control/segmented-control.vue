@@ -18,6 +18,21 @@
         <swiper-item class="swiper-item" v-if="1 <= panesVal.length - 1">
           <slot name="1"></slot>
         </swiper-item>
+        <swiper-item class="swiper-item" v-if="2 <= panesVal.length - 1">
+          <slot name="2"></slot>
+        </swiper-item>
+        <swiper-item class="swiper-item" v-if="3 <= panesVal.length - 1">
+          <slot name="3"></slot>
+        </swiper-item>
+        <swiper-item class="swiper-item" v-if="4 <= panesVal.length - 1">
+          <slot name="4"></slot>
+        </swiper-item>
+        <swiper-item class="swiper-item" v-if="5 <= panesVal.length - 1">
+          <slot name="5"></slot>
+        </swiper-item>
+        <swiper-item class="swiper-item" v-if="6 <= panesVal.length - 1">
+          <slot name="6"></slot>
+        </swiper-item>
       </swiper>
     </view>
   </view>
@@ -34,9 +49,6 @@ export default Vue.extend({
     panesVal: {
       type: Array,
       required: true,
-      validator: function (values) {
-        return values.length;
-      },
     },
   },
   components: {

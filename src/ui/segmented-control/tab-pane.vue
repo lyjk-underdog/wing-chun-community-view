@@ -1,5 +1,5 @@
 <template>
-  <view class="c-tab-pane">
+  <view class="c-tab-pane" :style="{width:width + 'rpx'}">
     <view
       class="c-tab-pane_value"
       :class="{ 'c-tab-pane_value--active': actived }"
@@ -22,6 +22,9 @@ export default Vue.extend({
       type: Boolean,
       required: true,
     },
+    width: {
+      type:[Number , String]
+    }
   },
 });
 </script>

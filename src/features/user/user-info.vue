@@ -42,12 +42,8 @@ export default Vue.extend({
           num: likeNum,
         },
         {
-          title: "粉丝",
-          num: 11,
-        },
-        {
-          title: "关注",
-          num: 15,
+          title: "学习时长(时)",
+          num: 65,
         },
       ];
     },

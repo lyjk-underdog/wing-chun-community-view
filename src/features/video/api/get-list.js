@@ -1,6 +1,9 @@
 import config from "@/config/index.js";
 
 export default (videoType) => new Promise((resolve, reject) => {
+
+
+
     uni.request({
         url: 'video/getlist',
         method: 'GET',
@@ -8,7 +11,7 @@ export default (videoType) => new Promise((resolve, reject) => {
             videoType,
         },
         success({ data }) {
-            console.log(data);
+
             let _formater = data => {
                 return data.map(item => ({...item , videoCover:config.ASSETS_URL + item.videoCover.slice(1)}))
             }
